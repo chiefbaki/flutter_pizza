@@ -27,8 +27,10 @@ class _ToggleBtnState extends State<ToggleBtn> {
       onSelected: (index, instance) {
         setState(() {
           vm[index] = !vm[index];
-          if (index == 1 && vm[index]) {
+          if (index == 1 && !vm[index]) {
             context.router.push(const SignUpRoute());
+          }else if(index == 0 && vm[index]){
+            context.router.push(const MainRoute());
           }
         });
       },

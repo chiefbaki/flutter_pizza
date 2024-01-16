@@ -1,7 +1,7 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:eat_fun_app/core/consts/theme/app_colors.dart';
 import 'package:eat_fun_app/core/consts/theme/app_fonts.dart';
-import 'package:eat_fun_app/presenation/screens/login_screen.dart';
+import 'package:eat_fun_app/presenation/screens/routes/app_router.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 
@@ -23,8 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void routing() {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const MainScreen()));
+      context.router.push(const HomeRoute());
     });
   }
 

@@ -6,6 +6,7 @@ import 'package:eat_fun_app/presenation/widgets/forget_pass_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/icon_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/login_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/password_textfield.dart';
+import 'package:eat_fun_app/presenation/widgets/repeat_pass_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/stack_bg.dart';
 import 'package:eat_fun_app/presenation/widgets/toggle_btn.dart';
 import 'package:eat_fun_app/resources/resources.dart';
@@ -50,10 +51,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: 30.h,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(0),
-                    child: PassTextField(),
+                  const PassTextField(),
+                  SizedBox(
+                    height: 20.h,
                   ),
+                  const RepeatPassTextField(),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [ForgetPassBtn()],

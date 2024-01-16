@@ -7,7 +7,9 @@ class EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController controller = TextEditingController();
     return TextField(
+      controller: controller,
       style: AppFonts.s14w700,
       decoration: InputDecoration(
           hintText: "Enter  email or username",
