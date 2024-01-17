@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: Stack(
         children: [
           Positioned(
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                             icon: SizedBox(
                                 height: 24.w,
                                 width: 24.w,
-                                child: Icon(
+                                child: const Icon(
                                   Icons.menu,
                                 )),
                           );

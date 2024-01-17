@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:eat_fun_app/core/consts/theme/app_colors.dart';
 import 'package:eat_fun_app/core/consts/theme/app_fonts.dart';
+import 'package:eat_fun_app/presenation/screens/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 class LoginBtn extends StatelessWidget {
@@ -8,7 +10,9 @@ class LoginBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          context.router.push(const HomeRoute());
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.selectedColor,
             shape: RoundedRectangleBorder(

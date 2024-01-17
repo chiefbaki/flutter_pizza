@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void routing() {
     Future.delayed(const Duration(seconds: 2), () {
-      context.router.push(const HomeRoute());
+      context.router.push(const MainRoute());
     });
   }
 

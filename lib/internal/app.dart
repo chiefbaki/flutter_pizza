@@ -1,4 +1,5 @@
 import 'package:eat_fun_app/presenation/provider/bool_toggle.dart';
+import 'package:eat_fun_app/presenation/provider/widget_state.dart';
 import 'package:eat_fun_app/presenation/screens/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +12,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      builder: (context, child) => ChangeNotifierProvider(
-        create: (context) => ToggleBoolProvider(),
+      builder: (context, child) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => ToggleBoolProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => WidgetStateProvider(),
+          ),
+        ],
         child: MaterialApp.router(
           routerConfig: AppRouter().config(),
           debugShowCheckedModeBanner: false,

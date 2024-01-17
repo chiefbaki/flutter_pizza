@@ -1,16 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:eat_fun_app/core/consts/theme/app_colors.dart';
 import 'package:eat_fun_app/core/consts/theme/app_fonts.dart';
+import 'package:eat_fun_app/presenation/provider/bool_toggle.dart';
+import 'package:eat_fun_app/presenation/provider/widget_state.dart';
 import 'package:eat_fun_app/presenation/widgets/email_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/forget_pass_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/icon_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/login_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/password_textfield.dart';
+import 'package:eat_fun_app/presenation/widgets/repeat_pass_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/stack_bg.dart';
 import 'package:eat_fun_app/presenation/widgets/toggle_btn.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 @RoutePage()
 class MainScreen extends StatefulWidget {
@@ -23,6 +27,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
+    final vm = Provider.of<ToggleBoolProvider>(context).isSelected;
     return Scaffold(
         body: StackBg(
       widget: Positioned(
@@ -54,6 +59,10 @@ class _MainScreenState extends State<MainScreen> {
                     padding: EdgeInsets.all(0),
                     child: PassTextField(),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  vm[0] ? const RepeatPassTextField() : const SizedBox(),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
