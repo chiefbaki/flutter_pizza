@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const ToggleBtn(),
+                  //const ToggleBtn(),
                   SizedBox(
                     height: 21.h,
                   ),

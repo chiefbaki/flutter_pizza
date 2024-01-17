@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ToggleBoolProvider extends ChangeNotifier{
-  final List<bool> isSelected = [false, true];
+class ToggleBoolProvider extends ChangeNotifier {
+  bool isSelected = false;
+  void changeWidget() {
+    notifyListeners();
+  }
 }
