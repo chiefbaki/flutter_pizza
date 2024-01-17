@@ -8,7 +8,6 @@ import 'package:eat_fun_app/presenation/widgets/login_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/password_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/repeat_pass_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/stack_bg.dart';
-import 'package:eat_fun_app/presenation/widgets/toggle_btn.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
