@@ -24,23 +24,31 @@ class _CategoriesListViewState extends State<CategoriesListView> {
         itemBuilder: (_, index) {
           return Column(
             children: [
-              ChoiceChip(
-                selectedColor: AppColors.white,
-                selectedShadowColor: AppColors.selectedColor,
-                shadowColor: Colors.black,
-                disabledColor: const Color.fromRGBO(229, 229, 229, 0.45),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 55, vertical: 35),
-                label: CategoriesModelList().models[index].img,
-                selected: selectedIndex == index,
-                onSelected: (value) {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                  debugPrint(index.toString());
+              GestureDetector(
+                onTap: () {
+                  selectedIndex = index;
+                  setState(() {});
                 },
+                child: Container(
+                  width: 110.w,
+                  height: 70.h,
+                  decoration: BoxDecoration(
+                    color: selectedIndex == index
+                        ? AppColors.white
+                        : AppColors.unselectedChoice,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          offset: const Offset(4, 5),
+                          color: selectedIndex == index
+                              ? AppColors.selectedBoxShadowColor
+                              : AppColors.unselectedBoxShadowColor)
+                    ],
+                  ),
+                  child: CategoriesModelList().models[index].img,
+                ),
               ),
               SizedBox(
                 height: 8.h,

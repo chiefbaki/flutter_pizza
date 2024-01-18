@@ -8,4 +8,6 @@ abstract class AppColors {
   static Color hintTextColor = const Color(0xff766F6F);
   static Color unselectedBoxShadowColor = const Color.fromRGBO(0, 0, 0, 0.35);
   static Color selectedBoxShadowColor = const Color.fromRGBO(241, 58, 33, 0.80);
+  static Color unselectedChoice = const Color(0xffE5E5E5);
+  
 }
