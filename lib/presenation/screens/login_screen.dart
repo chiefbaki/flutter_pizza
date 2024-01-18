@@ -9,11 +9,11 @@ import 'package:eat_fun_app/presenation/widgets/login_btn.dart';
 import 'package:eat_fun_app/presenation/widgets/password_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/repeat_pass_textfield.dart';
 import 'package:eat_fun_app/presenation/widgets/stack_bg.dart';
+import 'package:eat_fun_app/presenation/widgets/toggle_btn.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:toggle_switch/toggle_switch.dart';
 
 @RoutePage()
 class MainScreen extends StatefulWidget {
@@ -46,30 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ToggleSwitch(
-                    minWidth: 90.0,
-                    cornerRadius: 20.0,
-                    activeBgColors: [
-                      [AppColors.selectedColor],
-                      [AppColors.selectedColor]
-                    ],
-                    activeFgColor: Colors.white,
-                    inactiveBgColor: AppColors.unselectedColor,
-                    inactiveFgColor: AppColors.selectedColor,
-                    initialLabelIndex: 0,
-                    totalSwitches: 2,
-                    labels: const ['Log In', 'Sign Up'],
-                    radiusStyle: true,
-                    onToggle: (index) {
-                      print('switched to: $index');
-                      if (index == 0) {
-                        vm.isSelected = false;
-                      } else if (index == 1) {
-                        vm.isSelected = true;
-                        vm.changeWidget();
-                      }
-                    },
-                  ),
+                  const ToggleBtn(),
                   SizedBox(
                     height: 21.h,
                   ),
@@ -108,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
                       SizedBox(
                         width: 16.w,
                       ),
-                      const IconBtn(img: Images.facebook1)
+                      const IconBtn(img: Images.facebook)
                     ],
                   )
                 ],

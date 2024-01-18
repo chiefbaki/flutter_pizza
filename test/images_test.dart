@@ -8,12 +8,16 @@ void main() {
     expect(File(Images.ellipse2).existsSync(), isTrue);
     expect(File(Images.bgBurger).existsSync(), isTrue);
     expect(File(Images.burger).existsSync(), isTrue);
-    expect(File(Images.facebook1).existsSync(), isTrue);
+    expect(File(Images.burgerIcon).existsSync(), isTrue);
+    expect(File(Images.circleAva).existsSync(), isTrue);
+    expect(File(Images.facebook).existsSync(), isTrue);
     expect(File(Images.menuBurger1).existsSync(), isTrue);
     expect(File(Images.menuBurger2).existsSync(), isTrue);
     expect(File(Images.pan).existsSync(), isTrue);
     expect(File(Images.pizza).existsSync(), isTrue);
+    expect(File(Images.pizzaIcon).existsSync(), isTrue);
     expect(File(Images.search1).existsSync(), isTrue);
     expect(File(Images.splashScreenImg).existsSync(), isTrue);
+    expect(File(Images.textFieldbg).existsSync(), isTrue);
   });
 }
