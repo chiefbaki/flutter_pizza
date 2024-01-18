@@ -6,6 +6,9 @@ class Images {
   static const String ellipse2 = 'assets/imgs/Ellipse_2.png';
   static const String bgBurger = 'assets/imgs/bg-burger.png';
   static const String burger = 'assets/imgs/burger.png';
+  static const String burger3 = 'assets/imgs/burger3.png';
+  static const String burger4 = 'assets/imgs/burger4.png';
+  static const String burger5 = 'assets/imgs/burger5.png';
   static const String burgerIcon = 'assets/imgs/burgerIcon.png';
   static const String circleAva = 'assets/imgs/circle_ava.png';
   static const String facebook = 'assets/imgs/facebook.png';

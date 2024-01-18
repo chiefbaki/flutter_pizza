@@ -11,5 +11,6 @@ abstract class AppFonts{
   static const TextStyle s24w400 = TextStyle(fontSize: 24, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
   static const TextStyle s13w400 = TextStyle(fontSize: 13, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
   static const TextStyle s18w400 = TextStyle(fontSize: 18, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
-  static const TextStyle s43w400 = TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
+  static const TextStyle s43w400 = TextStyle(fontSize: 43, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
+  static const TextStyle s14w400 = TextStyle(fontSize: 17, fontWeight: FontWeight.w400, fontFamily: "Rowdies");
 }

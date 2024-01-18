@@ -1,16 +1,23 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:eat_fun_app/core/consts/theme/app_colors.dart';
 import 'package:eat_fun_app/core/consts/theme/app_fonts.dart';
-import 'package:eat_fun_app/data/model/foods_model.dart';
+import 'package:eat_fun_app/presenation/widgets/burgers_list.dart';
+import 'package:eat_fun_app/presenation/widgets/categories_list.dart';
 import 'package:eat_fun_app/presenation/widgets/home_textfield.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     Images.ellipse2,
-                    width: 410.w,
+                    width: 400.w,
                     height: 400.h,
                   ),
                   Positioned(
@@ -80,58 +87,36 @@ class HomeScreen extends StatelessWidget {
                 ],
               )),
           Positioned(
-            top: 405,
+            top: 395,
             left: 27,
             child: Stack(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                Positioned(
+                  bottom: -10,
+                  left: 30,
                   child: Image.asset(
                     Images.bgBurger,
                     width: 300.w,
                     height: 500.h,
                   ),
                 ),
-                const Text("Categories", style: AppFonts.s18w400),
-                Positioned(
-                  top: 45,
-                  child: SizedBox(
-                    width: 320.w,
-                    height: 150.h,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: CategoriesModelList().models.length,
-                      itemBuilder: (_, index) {
-                        return Column(
-                          children: [
-                            ChoiceChip(
-                                selectedColor: AppColors.unselectedColor,
-                                selectedShadowColor: AppColors.selectedColor,
-                                disabledColor:
-                                    const Color.fromRGBO(229, 229, 229, 0.45),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 55, vertical: 35),
-                                label: CategoriesModelList().models[index].img,
-                                selected: true),
-                            SizedBox(
-                              height: 8.h,
-                            ),
-                            Text(
-                              CategoriesModelList().models[index].label,
-                              style: AppFonts.s13w400,
-                            )
-                          ],
-                        );
-                      },
-                      separatorBuilder: (context, index) {
-                        return SizedBox(
-                          width: 8.w,
-                        );
-                      },
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text("Categories", style: AppFonts.s18w400),
+                    SizedBox(
+                      height: 17.h,
                     ),
-                  ),
+                    const CategoriesListView(),
+                    const Text(
+                      "Burgers",
+                      style: AppFonts.s18w400,
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    const BurgersListView()
+                  ],
                 )
               ],
             ),

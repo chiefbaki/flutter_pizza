@@ -8,6 +8,9 @@ void main() {
     expect(File(Images.ellipse2).existsSync(), isTrue);
     expect(File(Images.bgBurger).existsSync(), isTrue);
     expect(File(Images.burger).existsSync(), isTrue);
+    expect(File(Images.burger3).existsSync(), isTrue);
+    expect(File(Images.burger4).existsSync(), isTrue);
+    expect(File(Images.burger5).existsSync(), isTrue);
     expect(File(Images.burgerIcon).existsSync(), isTrue);
     expect(File(Images.circleAva).existsSync(), isTrue);
     expect(File(Images.facebook).existsSync(), isTrue);
