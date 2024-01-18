@@ -11,13 +11,13 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: SplashRoute.page,
+          initial: true,
         ),
         AutoRoute(
           page: MainRoute.page,
         ),
         AutoRoute(
           page: HomeRoute.page,
-          initial: true,
         )
       ];
 }
