@@ -24,11 +24,11 @@ class StackBg extends StatelessWidget {
                       height: 410,
                     ),
                     Positioned(
-                      top: 35,
+                      top: 48,
                       child: Image.asset(
                         Images.ellipse2,
-                        width: 400,
-                        height: 330,
+                        width: 390,
+                        height: 280,
                       ),
                     ),
                   ],

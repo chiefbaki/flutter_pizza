@@ -1,12 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:eat_fun_app/core/consts/theme/app_colors.dart';
 import 'package:eat_fun_app/core/consts/theme/app_fonts.dart';
+import 'package:eat_fun_app/presenation/screens/routes/app_router.dart';
 import 'package:eat_fun_app/presenation/widgets/burgers_list.dart';
 import 'package:eat_fun_app/presenation/widgets/categories_list.dart';
 import 'package:eat_fun_app/presenation/widgets/home_textfield.dart';
 import 'package:eat_fun_app/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -17,11 +20,40 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog.adaptive(
+                            title: Text("Вы хотите выйти?", style: AppFonts.s14w400.copyWith(color: Colors.black),),
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TextButton(onPressed: (){
+                                  context.router.push(const MainRoute());
+                                }, child: const Text("Да", style: AppFonts.s14w400,)),
+                                TextButton(onPressed: (){
+                                  context.router.pop();
+                                }, child: const Text("Нет", style: AppFonts.s14w400,))
+                              ],
+                            ),
+                          ));
+                },
+                child: Text(
+                  "Выйти",
+                  style: AppFonts.s14w400.copyWith(color: Colors.black),
+                  
+                ))
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Positioned(

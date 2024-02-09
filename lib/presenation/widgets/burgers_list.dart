@@ -18,7 +18,7 @@ class _BurgersListViewState extends State<BurgersListView> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 328.w,
-      height: 240.h,
+      height: 239.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: BurgersModelList().models.length,
@@ -30,7 +30,7 @@ class _BurgersListViewState extends State<BurgersListView> {
             },
             child: Container(
               width: 172.w,
-              height: 240.h,
+              height: 200.h,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: selectedIndex == index ? AppColors.bgColor : const [Color(0xffFFFFFF),Color(0xffFFFFFF)]),
                 borderRadius: BorderRadius.circular(10),
